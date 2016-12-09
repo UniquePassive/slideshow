@@ -32,7 +32,7 @@
 
             $.get("slides/<?php echo $_GET['id'] ?>/pages.js", function(data) {
                 slideShow.load("<?php echo $_GET['id'] ?>", JSON.parse(data));
-                slideShow.start();
+                slideShow.playSlide(0);
             });
         });
     </script>
