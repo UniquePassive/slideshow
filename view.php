@@ -31,7 +31,7 @@
                 $('#actionbar')
             );
 
-            $.get("slides/<?php echo $_GET['id'] ?>/pages.js", function(data) {
+            $.get("slides/<?php echo $_GET['id'] ?>/pages.json", function(data) {
                 slideShow.load("<?php echo $_GET['id'] ?>", JSON.parse(data));
                 slideShow.playSlide(0);
             });
