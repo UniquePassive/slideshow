@@ -1,12 +1,11 @@
 [
-    {
-        "image": "img/goodimage.png",
-        "caption": "This is a good image.",
-		
-        "duration": 2,
-		"hideDuration": false,
+	{
+		"image": "slides/example/img/goodimage.png",
+		"caption": "This is a good image.",
+
+		"duration": 2,
 		"next": 1,
-		
+
 		"buttons": [
 			{
 				"value": "Fast! Fast! Fast! Fast!",
@@ -15,10 +14,14 @@
 			{
 				"value": "????????",
 				"next": 3
+			},
+			{
+				"value": "Take a chance",
+				"next": "randomItem([[4,0.8], [5,0.2]])"
 			}
 		],
-		"randomButtonOrder": true
-    }, 
+		"buttonOrder": "shuffle(page.buttons)"
+ 	}, 
 	{
 		"caption": "You were too slow!"
 	},
@@ -27,10 +30,13 @@
 	},
 	{
 		"caption": "Yes.",
-		"duration": "10-30",
+		"duration": "randomInt(10,30)",
 		"next": 4
 	},
 	{
 		"caption": "Bye!"
+	},
+	{
+		"caption": "You're lucky!"
 	}
 ]
