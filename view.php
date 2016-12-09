@@ -21,6 +21,7 @@
 
     <script src="js/lib/jquery-3.1.1.min.js"></script>
     <script src="js/lib/circle-progress.min.js"></script>
+    <script src="js/slideshow-util.js"></script>
     <script src="js/slideshow.js"></script>
     <script>
         $(function() {
