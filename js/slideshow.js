@@ -44,7 +44,7 @@ SlideShow.prototype.playSlide = function(idx) {
     var page = this.pages[idx];
     
     if (page.image !== undefined) {
-        this.content.append('<img src="' + page.image + '">');
+        this.content.append('<img src="' + evaluate(page.image) + '">');
     }
     
     if (page.caption !== undefined) {
@@ -64,7 +64,7 @@ SlideShow.prototype.playSlide = function(idx) {
 
     if (page.duration !== undefined) {
         if (page.next !== undefined) {
-            var duration = evaluateInt(page.duration);
+            var duration = evaluate(page.duration);
 
             if (page.hideDuration === undefined 
                     || !page.hideDuration) {
@@ -81,7 +81,7 @@ SlideShow.prototype.playSlide = function(idx) {
             }
 
             this.timeout = setTimeout((function() {
-                this.playSlide(evaluateInt(page.next));
+                this.playSlide(evaluate(page.next));
                 delete this.timeout;
             }).bind(this), duration * 1000);
         }
@@ -93,13 +93,15 @@ SlideShow.prototype.pressButton = function(idx) {
     var button = page.buttons[idx];
 
     if (button.next !== undefined) {
-        this.playSlide(evaluateInt(button.next));
+        this.playSlide(evaluate(button.next));
     }
 };
 
-function evaluateInt(string) {
+function evaluate(string) {
     if (isNaN(string)) {
-        return eval(string);
+        if (string.startsWith("eval:")) {
+            return eval(string.substring(5));
+        }
     }
     return string;
 }

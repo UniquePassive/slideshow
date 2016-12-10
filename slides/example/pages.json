@@ -17,7 +17,7 @@
 			},
 			{
 				"value": "Take a chance",
-				"next": "randomItem([[4,0.8], [5,0.2]])"
+				"next": "eval:randomItem([[4,0.8], [5,0.2]])"
 			}
 		],
 		"buttonOrder": "shuffle(page.buttons)"
@@ -30,7 +30,7 @@
 	},
 	{
 		"caption": "Yes.",
-		"duration": "randomInt(10,30)",
+		"duration": "eval:randomInt(10,30)",
 		"next": 4
 	},
 	{
