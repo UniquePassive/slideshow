@@ -16,7 +16,7 @@
             <section id="caption"></section>
         </aside>
 
-        <aside id="actionbar"></aside>
+        <aside id="actionbar"><div id="actionbar-inside"></div></aside>
     </main>
 
     <script src="js/lib/jquery-3.1.1.min.js"></script>
@@ -28,7 +28,7 @@
             slideShow = new SlideShow(
                 $('#content'), 
                 $('#caption'), 
-                $('#actionbar')
+                $('#actionbar-inside')
             );
 
             $.get("slides/<?php echo $_GET['id'] ?>/pages.json", function(data) {

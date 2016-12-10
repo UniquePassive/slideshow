@@ -16,8 +16,17 @@ main {
     height: 100%;
 }
 
+p {
+    font-size: 110%
+}
+
+h1 {
+    font-size: 150%;
+}
+
 #slide {
     width: calc(100% - 150px);
+    height: 100%;
     float: left;
 
     overflow: hidden;
@@ -25,12 +34,22 @@ main {
     word-wrap: break-word;
 }
 
+#content {
+    height: 100%;
+}
+
 #content > * {
     max-width: 100%;
+    max-height: 100%;
 }
 
 #caption {
-    padding: 30px;
+    width: calc(100% - 200px);
+    padding: 25px;
+    bottom: 0;
+
+    position: fixed;
+    background-color: #212121;
 }
 
 #actionbar {
@@ -42,7 +61,13 @@ main {
     background-color: #424242;
 }
 
-#actionbar > * {
+#actionbar-inside {
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+}
+
+#actionbar-inside > * {
     margin-top: 20px;
 }
 
@@ -60,4 +85,14 @@ button {
 button:hover {
     background: #545454;
     text-decoration: none;
+}
+
+@media(max-width: 700px) {
+    p {
+        font-size: 120%;
+    }
+
+    #caption {
+        padding-bottom: 50px;
+    }
 }
